@@ -1,15 +1,18 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import "./App.css";
+import AddTutorial from "./components/AddTutorial";
+import Tutorial from "./components/Tutorial";
+import TutorialsList from "./components/TutorialsList";
 
 function App() {
   return (
     <div className="App">
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <a href="/tutorials" className="navbar-brand">
+        <a href="/tutorials" className="navbar-brand ms-3">
           drfRest
         </a>
-        <div className="navbar-nav mr-auto">
+        <div className="navbar-nav me-auto">
           <li className="nav-item">
             <Link to={"/tutorials"} className="nav-link">
               Tutorials
@@ -22,14 +25,14 @@ function App() {
           </li>
         </div>
       </nav>
-      {/* <div className="container mt-3">
+      <div className="container mt-3">
         <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/tutorials" element={<App />} />
-          <Route path="/add" element={<App />} />
-          <Route path="/tutorials/:id" element={<App />} />
+          <Route path="/" element={<TutorialsList />} />
+          <Route path="/tutorials" element={<TutorialsList />} />
+          <Route path="/add" element={<AddTutorial />} />
+          <Route path="/tutorials/:id" element={<Tutorial />} />
         </Routes>
-      </div> */}
+      </div>
     </div>
   );
 }
